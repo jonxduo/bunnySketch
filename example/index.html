@@ -15,7 +15,6 @@
 	<script type="text/javascript" src="../bunnySketch.js"></script>
 	<script type="text/javascript">
 		$(function(){
-			console.log($('#canvas1'))
 			canvas = $('#canvas1').bunnySketch();
 			$('a.btn').click(function(e){
 				$(this).addClass('active');
@@ -25,7 +24,7 @@
 	</script>
 </head>
 <body>
-	<canvas id="canvas1" width="300" height="300"></canvas>
+	<canvas id="canvas1" width="300" height="400"></canvas>
 	<nav data-bunnySketch-toolbar="canvas1">
 		<div class="clearfix">
 			<a class="btn" href="#" data-bunnySketch-color="#dddddd" style="background:#dddddd;"></a>
@@ -43,7 +42,12 @@
 			<a href="#" class="btn" data-bunnySketch-size='50' >50</a>
 		</div>
 		<div class="clearfix">
-			<a data-bunnySketch-image="img/auto.png" href="#">Car</a>
+			<a data-bunnySketch-image="img/base.png" href="#">Base</a>
+			<a data-bunnySketch-image="img/pantalonepirata.png" href="#">Pantalone pirata</a>
+			<a data-bunnySketch-image="img/toppirata.png" href="#">Top pirata</a>
+			<a data-bunnySketch-image="img/tatuaggiopirata.png" href="#">Tatuaggio pirata</a>
+			<a data-bunnySketch-image="img/bandanapirata.png" href="#">Bandana pirata</a>
+			<a data-bunnySketch-image="img/espressione1.png" href="#">Espressione 1</a>
 		</div>
 		<div class="clearfix">
 			<a class="btn" data-bunnySketch-undo>&lt; Undo</a>
@@ -60,6 +64,7 @@
 			<a class="btn" data-bunnySketch-alpha='0.5'>50%</a>
 			<a class="btn" data-bunnySketch-alpha='0.25'>25%</a>
 		</div>
+		<a href="#" data-bunnySketch-save="png">Download</a>
 	</nav>
 </body>
 </html>

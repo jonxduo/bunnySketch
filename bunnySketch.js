@@ -126,8 +126,8 @@
 
  			function setBrush (brush){
  				console.log(brush);
- 				if(typeof brush.join!= 'undefined') ctx.lineJoin = brush.join; console.log('join:', ctx.lineJoin);
-				if(typeof brush.cap!= 'undefined') ctx.lineCap = brush.cap; console.log('cap:', ctx.lineCap);
+ 				if(typeof brush.join!= 'undefined') ctx.lineJoin = brush.join;
+				if(typeof brush.cap!= 'undefined') ctx.lineCap = brush.cap;
 				if(typeof brush.color!= 'undefined') setColor(brush.color);
 				if(typeof brush.size!= 'undefined') setSize(brush.size);
  			}
@@ -165,35 +165,51 @@
 
 			// toolbar
 			$(toolbar+' [data-bunnySketch-color]').click(function(e){
+				e.preventDefault();
 				setColor($(this).data('bunnySketch-color'));
 			});
 
 			$(toolbar+' [data-bunnySketch-size]').click(function(e){
+				e.preventDefault();
 				setSize($(this).data('bunnySketch-size'));
 			});
 
 			$(toolbar+' [data-bunnySketch-image]').click(function(e){
+				e.preventDefault();
 				insertImage($(this).data('bunnySketch-image'));
 			});
 
 			$(toolbar+' [data-bunnySketch-brush]').click(function(e){
+				e.preventDefault();
 				setBrush($(this).data('bunnySketch-brush'));
 			});
 
 			$(toolbar+' [data-bunnySketch-alpha]').click(function(e){
+				e.preventDefault();
 				setAlpha($(this).data('bunnySketch-alpha'));
 			});
 
 			$(toolbar+' [data-bunnySketch-undo]').click(function(e){
+				e.preventDefault();
 				undo();
 			});
 
 			$(toolbar+' [data-bunnySketch-redo]').click(function(e){
+				e.preventDefault();
 				redo();
 			});
 
 			$(toolbar+' [data-bunnySketch-clear]').click(function(e){
+				e.preventDefault();
 				clear();
+			});
+
+			$(toolbar+' [data-bunnySketch-save]').click(function(e){
+				e.preventDefault();
+				var rawImageData = canvas.toDataURL("image/png;base64");
+        		rawImageData = rawImageData.replace("image/png", "image/octet-stream");
+        		console.log(rawImageData);
+				return window.open(rawImageData);
 			});
 
         });
