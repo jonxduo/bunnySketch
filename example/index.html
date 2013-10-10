@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, user-scalable=false, initial-scale=1;">
+	<style type="text/css">
+		#canvas1{border:1px solid #ddd;}
+		html, body {width:100%; height:100%;}
+		a{display:block; border:1px solid #ccc; margin:5px; float:left; min-width:35px; height:35px; line-height:35px; text-align: center; padding:0 5px;}
+		a.btn.active {box-shadow: 0px 0px 5px #000;}
+		.cleafix:after, .clearfix:before {content:''; display:block; clear:both;}
+	</style>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>
+	<script type="text/javascript" src="../externalCode/jquery.hammer.min.js"></script>
+	<script type="text/javascript" src="../externalCode/hammer.min.js"></script>
+	<script type="text/javascript" src="../bunnySketch.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			console.log($('#canvas1'))
+			canvas = $('#canvas1').bunnySketch();
+			$('a.btn').click(function(e){
+				$(this).addClass('active');
+				$(this).siblings('.active').removeClass('active');
+			});
+		});
+	</script>
+</head>
+<body>
+	<canvas id="canvas1" width="300" height="300"></canvas>
+	<nav data-bunnySketch-toolbar="canvas1">
+		<div class="clearfix">
+			<a class="btn" href="#" data-bunnySketch-color="#dddddd" style="background:#dddddd;"></a>
+			<a class="btn" href="#" data-bunnySketch-color="#333333" style="background:#333333;"></a>
+			<a class="btn" href="#" data-bunnySketch-color="#a73131" style="background:#a73131;"></a>
+			<a class="btn" href="#" data-bunnySketch-color="#efc01f" style="background:#efc01f;"></a>
+			<a class="btn" href="#" data-bunnySketch-color="#49b9cd" style="background:#49b9cd;"></a>
+		</div>
+		<div class="clearfix">
+			<a href="#" class="btn" data-bunnySketch-size='5' >5</a>
+			<a href="#" class="btn" data-bunnySketch-size='10' >10</a>
+			<a href="#" class="btn" data-bunnySketch-size='15' >15</a>
+			<a href="#" class="btn" data-bunnySketch-size='20' >20</a>
+			<a href="#" class="btn" data-bunnySketch-size='30' >30</a>
+			<a href="#" class="btn" data-bunnySketch-size='50' >50</a>
+		</div>
+		<div class="clearfix">
+			<a data-bunnySketch-image="img/auto.png" href="#">Car</a>
+		</div>
+		<div class="clearfix">
+			<a class="btn" data-bunnySketch-undo>&lt; Undo</a>
+			<a class="btn" data-bunnySketch-redo>Redo &gt;</a>
+			<a class="btn" data-bunnySketch-clear>Delete</a>
+		</div>
+		<div class="clearfix">
+			<a class="btn" data-bunnySketch-brush='{"join" : "round", "cap" : "square"}'>Square</a>
+			<a class="btn" data-bunnySketch-brush='{"join" : "round", "cap" : "round"}'>Round</a>
+			<a class="btn" data-bunnySketch-brush='{"join" : "round", "cap" : "butt"}'>Butt</a>
+		</div>
+		<div class="clearfix">
+			<a class="btn" data-bunnySketch-alpha='1'>100%</a>
+			<a class="btn" data-bunnySketch-alpha='0.5'>50%</a>
+			<a class="btn" data-bunnySketch-alpha='0.25'>25%</a>
+		</div>
+	</nav>
+</body>
+</html>
